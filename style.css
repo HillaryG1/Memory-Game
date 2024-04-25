@@ -70,6 +70,7 @@ h2
   background: white;
   transform: rotateY(180deg);
   transition: 0.25s ;
+  
 }
 .item.boxOpen
 {
