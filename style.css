@@ -1,20 +1,22 @@
-*
-{
+/* Reset CSS */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: monospace;
 }
-body
-{
+
+/* Styling for the body */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #6488EA;
-} 
-.container
-{
+}
+
+/* Styling for the game container */
+.container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -24,32 +26,36 @@ body
   background: #9DB4F3;
   padding: 40px 60px;
 }
-h2
-{
+
+/* Styling for the heading */
+h2 {
   font-size: 3em;
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-.reset
-{
+
+/* Styling for the reset button */
+.reset {
   padding: 15px 20px;
   color: #5380FC;
   background: white;
   border: none;
-  font-size: 1.5 em;
+  font-size: 1.5em; /* Adjusted font size */
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 600;
 }
-.reset:focus
-{
+
+/* Hover state for the reset button */
+.reset:focus {
   color: white;
   background: #5380FC;
 }
-.game
-{
+
+/* Styling for the game grid */
+.game {
   width: 430px;
   height: 430px;
   display: flex;
@@ -58,8 +64,9 @@ h2
   transform-style: preserve-3d;
   perspective: 500px;
 }
-.item
-{
+
+/* Styling for each card item */
+.item {
   position: relative;
   width: 100px;
   height: 100px;
@@ -69,15 +76,16 @@ h2
   font-size: 3em;
   background: white;
   transform: rotateY(180deg);
-  transition: 0.25s ;
-  
+  transition: 0.25s;
 }
-.item.boxOpen
-{
-transform: rotateY(0deg);
+
+/* Styling for open and matched cards */
+.item.boxOpen {
+  transform: rotateY(0deg);
 }
-.item::after
-{
+
+/* Styling for the back face of the card */
+.item::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -87,7 +95,6 @@ transform: rotateY(0deg);
   backface-visibility: hidden;
 }
 .boxOpen:after,
-.boxMatch:after
-{
+.boxMatch:after {
   transform: rotateY(180deg);
 }

@@ -1,11 +1,16 @@
+// Array of emojis  ----->
 const emojis = ["🌎", "🌎", "🏈", "🏈", "🌟", "🌟", "❤️", "❤️", "🍕", "🍕","🎸", "🎸", "🎮", "🎮", "🚀", "🚀"];
 
+// Shuffle the emojis array ----->
 let shuffleEmojis = emojis.sort(() => (Math.random() > .5) ? 2: -1);
+
+// Loop through the shuffled emojis to create card elements ----->
 for (let i =0; i<emojis.length; i++){
   let box = document.createElement('div')
   box.className = 'item';
   box.innerHTML = shuffleEmojis[i]
 
+  // Add click event listener to each card----->
   box.onclick = function(){
     this.classList.add('boxOpen')
     setTimeout(function(){
@@ -18,6 +23,7 @@ for (let i =0; i<emojis.length; i++){
          document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
          document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
 
+         // Check if all cards are matched----->
          if(document.querySelectorAll('.boxMatch').length == emojis.length ){
           alert('You win!')
          }
@@ -30,5 +36,10 @@ for (let i =0; i<emojis.length; i++){
     }, 500);
   }
 
-  document.querySelector('.game').appendChild(box);
-}
+   // Append each card to the game container----->
+   document.querySelector('.game').appendChild(box);
+  }
+  document.querySelector('.reset').addEventListener('click', function() {
+    window.location.reload();
+  });
+   
